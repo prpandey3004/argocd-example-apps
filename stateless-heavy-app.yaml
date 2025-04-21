@@ -67,7 +67,7 @@ kind: Deployment
 metadata:
   name: stateless-heavy-app
 spec:
-  replicas: 20
+  replicas: 1
   selector:
     matchLabels:
       app: stateless-heavy-app
@@ -83,7 +83,7 @@ spec:
         emptyDir: {}
       containers:
       - name: app
-        image: gcr.io/my-project/stateless-app:latest
+        image: gcr.io/google-samples/hello-app:1.0
         ports:
         - containerPort: 8080
         envFrom:
